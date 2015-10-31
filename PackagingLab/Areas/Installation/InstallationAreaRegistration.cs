@@ -22,7 +22,7 @@ namespace PkgLab.Areas.Installation
             );
 
             // To override package id based on convention, change it here...
-            GlobalFilters.Filters.Add(new PackageIdFilter("Package.Lab"));
+            GlobalFilters.Filters.Add(new PackageIdFilter("Plugin"));
         }
     }
 }
