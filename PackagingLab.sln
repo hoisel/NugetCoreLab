@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PkgLab", "PkgLab\PkgLab.csproj", "{54FDF9E9-47D7-40E3-8C0E-C983A6A8E70E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackagingLab", "PkgLab\PackagingLab.csproj", "{54FDF9E9-47D7-40E3-8C0E-C983A6A8E70E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin1", "Plugin1\Plugin1.csproj", "{C43445F6-9D58-418D-9408-147BE4F442D5}"
 EndProject
