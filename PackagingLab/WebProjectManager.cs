@@ -23,7 +23,7 @@ namespace PkgLab
         // Methods
         public WebProjectManager(string remoteSource, string siteRoot)
         {
-           
+
             var sourceRepository = PackageRepositoryFactory.Default.CreateRepository(remoteSource);
 
             string webRepositoryDirectory = GetWebRepositoryDirectory(siteRoot);
@@ -57,10 +57,12 @@ namespace PkgLab
         {
             var walker = new InstallWalker(localRepository,
                                            sourceRepository,
-                                           new FrameworkName(".NET Framework, Version=4.0"),
+                                           VersionUtility.DefaultTargetFramework,
+                                           //new FrameworkName(".NET Framework, Version=4.0"),
                                            NullLogger.Instance,
                                            ignoreDependencies: false,
-                                           allowPrereleaseVersions: true);
+                                           allowPrereleaseVersions: true,
+                                           dependencyVersion: DependencyVersion.Highest);
 
 
             return (from operation in walker.ResolveOperations(package)
@@ -159,10 +161,13 @@ namespace PkgLab
         /// <returns></returns>
         public IPackage GetUpdate(IPackage package)
         {
-            return SourceRepository.GetUpdates(LocalRepository.GetPackages(),
+            var update = SourceRepository.GetUpdates(LocalRepository.GetPackages(),
                                                includePrerelease: true,
                                                includeAllVersions: true)
-            .FirstOrDefault(p => (package.Id == p.Id));
+                                         .OrderByDescending(p => p.Version.Version)  // todo: eu que coloquei pra pegar ultima versao. Manter?
+                                         .FirstOrDefault(p => (package.Id == p.Id));
+
+            return update;
         }
 
 
