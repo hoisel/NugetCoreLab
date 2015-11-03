@@ -73,7 +73,6 @@
     <Compile Include="Areas\Plugin1\Controllers\PluginController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Areas\Plugin1\Views\Plugin\Index.cshtml" />
     <None Include="packages.config" />

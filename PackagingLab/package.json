@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "ASP.NET",
+  "private": true,
+  "devDependencies": {
+    "request": "2.65.0",
+    "gulp-plumber": "1.0.1"
+  }
+}
